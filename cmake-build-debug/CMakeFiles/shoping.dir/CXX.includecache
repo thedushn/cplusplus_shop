@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/thedushn/CLionProjects/shoping/DLinkedList.h
+cstring
+-
+iostream
+-
+iosfwd
+-
+
+C:/Users/thedushn/CLionProjects/shoping/Shop.cpp
+Shop.h
+C:/Users/thedushn/CLionProjects/shoping/Shop.h
+
+C:/Users/thedushn/CLionProjects/shoping/Shop.h
+DLinkedList.h
+C:/Users/thedushn/CLionProjects/shoping/DLinkedList.h
+

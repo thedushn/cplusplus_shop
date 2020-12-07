@@ -1,0 +1,3 @@
+C:/Users/thedushn/CLionProjects/shoping/cmake-build-debug/CMakeFiles/shoping.dir
+C:/Users/thedushn/CLionProjects/shoping/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/thedushn/CLionProjects/shoping/cmake-build-debug/CMakeFiles/rebuild_cache.dir
