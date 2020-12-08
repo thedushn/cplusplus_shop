@@ -14,6 +14,18 @@ iostream
 iosfwd
 -
 
+C:/Users/thedushn/CLionProjects/shoping/Item.cpp
+cstring
+-
+iostream
+-
+Item.h
+C:/Users/thedushn/CLionProjects/shoping/Item.h
+
+C:/Users/thedushn/CLionProjects/shoping/Item.h
+ostream
+-
+
 C:/Users/thedushn/CLionProjects/shoping/Shop.cpp
 Shop.h
 C:/Users/thedushn/CLionProjects/shoping/Shop.h
@@ -21,4 +33,12 @@ C:/Users/thedushn/CLionProjects/shoping/Shop.h
 C:/Users/thedushn/CLionProjects/shoping/Shop.h
 DLinkedList.h
 C:/Users/thedushn/CLionProjects/shoping/DLinkedList.h
+Item.h
+C:/Users/thedushn/CLionProjects/shoping/Item.h
+
+C:/Users/thedushn/CLionProjects/shoping/main.cpp
+iostream
+-
+Shop.h
+C:/Users/thedushn/CLionProjects/shoping/Shop.h
 
