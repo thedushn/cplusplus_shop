@@ -169,6 +169,33 @@ DLinkedList.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\shoping.dir\build.make CMakeFiles/shoping.dir/DLinkedList.cpp.s
 .PHONY : DLinkedList.cpp.s
 
+Item.obj: Item.cpp.obj
+
+.PHONY : Item.obj
+
+# target to build an object file
+Item.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\shoping.dir\build.make CMakeFiles/shoping.dir/Item.cpp.obj
+.PHONY : Item.cpp.obj
+
+Item.i: Item.cpp.i
+
+.PHONY : Item.i
+
+# target to preprocess a source file
+Item.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\shoping.dir\build.make CMakeFiles/shoping.dir/Item.cpp.i
+.PHONY : Item.cpp.i
+
+Item.s: Item.cpp.s
+
+.PHONY : Item.s
+
+# target to generate assembly for a file
+Item.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\shoping.dir\build.make CMakeFiles/shoping.dir/Item.cpp.s
+.PHONY : Item.cpp.s
+
 Shop.obj: Shop.cpp.obj
 
 .PHONY : Shop.obj
@@ -235,6 +262,9 @@ help:
 	@echo ... DLinkedList.obj
 	@echo ... DLinkedList.i
 	@echo ... DLinkedList.s
+	@echo ... Item.obj
+	@echo ... Item.i
+	@echo ... Item.s
 	@echo ... Shop.obj
 	@echo ... Shop.i
 	@echo ... Shop.s

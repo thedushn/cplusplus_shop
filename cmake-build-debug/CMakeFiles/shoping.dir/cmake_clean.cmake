@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/shoping.dir/DLinkedList.cpp.obj"
+  "CMakeFiles/shoping.dir/Item.cpp.obj"
   "CMakeFiles/shoping.dir/Shop.cpp.obj"
   "CMakeFiles/shoping.dir/main.cpp.obj"
   "libshoping.dll.a"

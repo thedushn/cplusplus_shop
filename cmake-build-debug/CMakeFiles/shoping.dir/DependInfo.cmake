@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/thedushn/CLionProjects/shoping/DLinkedList.cpp" "C:/Users/thedushn/CLionProjects/shoping/cmake-build-debug/CMakeFiles/shoping.dir/DLinkedList.cpp.obj"
+  "C:/Users/thedushn/CLionProjects/shoping/Item.cpp" "C:/Users/thedushn/CLionProjects/shoping/cmake-build-debug/CMakeFiles/shoping.dir/Item.cpp.obj"
   "C:/Users/thedushn/CLionProjects/shoping/Shop.cpp" "C:/Users/thedushn/CLionProjects/shoping/cmake-build-debug/CMakeFiles/shoping.dir/Shop.cpp.obj"
   "C:/Users/thedushn/CLionProjects/shoping/main.cpp" "C:/Users/thedushn/CLionProjects/shoping/cmake-build-debug/CMakeFiles/shoping.dir/main.cpp.obj"
   )

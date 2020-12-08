@@ -7,15 +7,18 @@
 
 
 #include "DLinkedList.h"
+#include "Item.h"
 
 class Shop : public DlinkedList {
 
 private:
+
     class ItemNode {
     private:
         ItemNode* next;
         ItemNode* prev;
         Item      item{};
+
     public:
         ItemNode();
 
@@ -30,24 +33,32 @@ private:
         ItemNode *getNext() ;
 
         ItemNode *getPrev() const;
-        
-        void SetNodeData(Item item_new);
+
+
 
         Item &getItem() ;
+
 
 
     };
         ItemNode* head;
         ItemNode* tail;
+    friend ostream & operator << (ostream&,Shop::ItemNode);
+
+    bool search (Item *item);
+
+
 
     unsigned int    length;
 public:
     Shop();
 
     void Display_list();
-    static void Display_item(Item item);
+
     int  Insert( unsigned int price, unsigned int count, string name);
     void  setItem(Item *item, unsigned int price, unsigned int count, string name);
+
+    ItemNode *getHead() const;
 
     virtual ~Shop();
 };

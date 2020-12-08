@@ -8,15 +8,7 @@
 #include <cstring>
 #include <iostream>
 #include <iosfwd>
-typedef struct Item Item;
-struct Item{
-    unsigned int price;
-    unsigned int count;
-    char name [64];
 
-
-
-};
 using namespace std;
 class DlinkedList {
 

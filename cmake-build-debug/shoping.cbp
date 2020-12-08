@@ -86,6 +86,12 @@
 		<Unit filename="C:/Users/thedushn/CLionProjects/shoping/DLinkedList.h">
 			<Option target="shoping"/>
 		</Unit>
+		<Unit filename="C:/Users/thedushn/CLionProjects/shoping/Item.cpp">
+			<Option target="shoping"/>
+		</Unit>
+		<Unit filename="C:/Users/thedushn/CLionProjects/shoping/Item.h">
+			<Option target="shoping"/>
+		</Unit>
 		<Unit filename="C:/Users/thedushn/CLionProjects/shoping/Shop.cpp">
 			<Option target="shoping"/>
 		</Unit>

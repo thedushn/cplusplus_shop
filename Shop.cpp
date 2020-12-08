@@ -7,20 +7,15 @@
 void Shop::Display_list() {
     ItemNode *temp=this->tail;
     while(temp){
+        cout<< *temp;
 
-        Display_item(temp->getItem());
         temp= temp->getNext();
 
 
     }
 
 }
-void Shop::Display_item(Item item) {
 
-    cout << "Name of item "<<item.name<<endl;
-    cout << "Price of item "<<item.price<<endl;
-    cout << "Count of item "<<item.count<<endl;
-}
 int Shop::Insert( unsigned int price, unsigned int count, string name){
 
     if(price<=0){
@@ -47,7 +42,11 @@ int Shop::Insert( unsigned int price, unsigned int count, string name){
     }
     else
     {
+
         setItem(&item,price,count,name);
+          if(search(&item)){
+              return 0;
+          }
         auto temp=new ItemNode(nullptr,head,item);
         head->setNext(temp);
         head=temp;
@@ -61,9 +60,9 @@ int Shop::Insert( unsigned int price, unsigned int count, string name){
 }
 void Shop::setItem(Item *item, unsigned int price, unsigned int count, string name) {
 
-    item->count =count ;
-    item->price =price ;
-    strcpy(item->name, name.c_str());
+    item->setCount(count);
+    item->setPrice(price);
+    item->setName(name);
 }
 
 Shop::~Shop() {
@@ -90,13 +89,39 @@ Shop::Shop() {
 }
 
 
-void Shop::ItemNode::SetNodeData(Item item_new) {
 
-    this->item.count =item_new.count ;
-    this->item.price =item_new.price ;
-    strcpy(this->item.name, item_new.name);
-
+Shop::ItemNode *Shop::getHead() const {
+    return head;
 }
+
+ostream &operator<<(ostream & os, Shop::ItemNode itemNode) {
+
+cout << itemNode.getItem();
+
+    return os;
+}
+
+bool Shop::search(Item *item) {
+    ItemNode *temp=this->tail;
+    while(temp){
+       // cout<< *temp;
+
+        if(temp->getItem()==*item==0){
+            cout << "hello there copy of mine"<<endl;
+            temp->getItem()+=*item;
+
+            return true;
+        }
+        temp= temp->getNext();
+
+
+    }
+    return false;
+}
+
+
+
+
 
 Item &Shop::ItemNode::getItem()  {
     return item;
@@ -131,7 +156,13 @@ Shop::ItemNode::ItemNode(Shop::ItemNode *next, Shop::ItemNode *prev, Item item) 
 }
 
 Shop::ItemNode::ItemNode() {
-    this->item= {0};
+
     this->next= nullptr;
     this->prev= nullptr;
 }
+
+
+
+
+
+
