@@ -2,9 +2,11 @@
 // Created by thedushn on 04-Dec-20.
 //
 
+#include <cstring>
 #include "Shop.h"
 
 void Shop::Display_list() {
+    cout <<"DISPLAY :\n";
     ItemNode *temp=this->tail;
     while(temp){
         cout<< *temp;
@@ -16,7 +18,7 @@ void Shop::Display_list() {
 
 }
 
-int Shop::Insert( unsigned int price, unsigned int count, string name){
+int Shop::Insert( unsigned int price, unsigned int count, const string& name){
 
     if(price<=0){
         cout <<"price cant be lower or equal to 0"<<endl;
@@ -47,8 +49,10 @@ int Shop::Insert( unsigned int price, unsigned int count, string name){
           if(search(&item)){
               return 0;
           }
+
         auto temp=new ItemNode(nullptr,head,item);
         head->setNext(temp);
+
         head=temp;
         this->length++;
 
@@ -106,8 +110,10 @@ bool Shop::search(Item *item) {
     while(temp){
        // cout<< *temp;
 
-        if(temp->getItem()==*item==0){
-            cout << "hello there copy of mine"<<endl;
+        if(temp->getItem()==*item){
+            cout<<temp->getItem().getName()<<endl;
+            cout<<item->getName()<<endl;
+         //   cout << "hello there copy of mine"<<endl;
             temp->getItem()+=*item;
 
             return true;
@@ -119,8 +125,50 @@ bool Shop::search(Item *item) {
     return false;
 }
 
+void Shop::DeleteNode(const string &name) {
+    ItemNode *temp=this->tail;
+    while(temp){
+
+        if(strcmp(temp->getItem().getName(),name.c_str())==0){
+
+            if(temp==this->tail && temp->getNext()== nullptr){ //last item
+                    delete temp;
+                this->tail=this->head= nullptr;
+                return;
 
 
+            }else if(temp==this->tail){
+                temp=temp->getNext();
+                delete this->tail;
+                temp->setPrev(nullptr);
+                this->tail=temp;
+
+            }else if(temp==this->head){
+                temp=temp->getPrev();
+
+                delete this->head;
+                this->head=temp;
+                temp->setNext(nullptr);
+
+
+
+            }else{
+                ItemNode *temp2=temp->getNext();
+                ItemNode *temp0=temp->getPrev();
+                temp2->setPrev(temp0);
+                temp0->setNext(temp2);
+                delete temp;
+            }
+
+
+            return;
+        }
+
+        temp= temp->getNext();
+
+
+    }
+}
 
 
 Item &Shop::ItemNode::getItem()  {
@@ -148,18 +196,32 @@ void Shop::ItemNode::setItem(const Item &item_new) {
     ItemNode::item = item_new;
 }
 
+
 Shop::ItemNode::ItemNode(Shop::ItemNode *next, Shop::ItemNode *prev, Item item) {
     this->item=item;
     this->next=next;
     this->prev=prev;
 
 }
-
 Shop::ItemNode::ItemNode() {
 
     this->next= nullptr;
     this->prev= nullptr;
 }
+
+void Shop::ItemNode::removeItem() {
+    cout <<"we here"<<endl;
+    if(this->getNext()== nullptr){//is last or only node
+
+        this->prev= nullptr;
+        delete this;
+    }
+    this->prev->next=this->next;
+    delete this;
+
+}
+
+
 
 
 

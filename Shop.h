@@ -6,10 +6,10 @@
 #define SHOPING_SHOP_H
 
 
-#include "DLinkedList.h"
+#include <iostream>
 #include "Item.h"
 
-class Shop : public DlinkedList {
+class Shop {
 
 private:
 
@@ -34,7 +34,7 @@ private:
 
         ItemNode *getPrev() const;
 
-
+        void removeItem() ;
 
         Item &getItem() ;
 
@@ -55,9 +55,9 @@ public:
 
     void Display_list();
 
-    int  Insert( unsigned int price, unsigned int count, string name);
+    int  Insert( unsigned int price, unsigned int count, const string& name);
     void  setItem(Item *item, unsigned int price, unsigned int count, string name);
-
+    void DeleteNode(const string& name);
     ItemNode *getHead() const;
 
     virtual ~Shop();

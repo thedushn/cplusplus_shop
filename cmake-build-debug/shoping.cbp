@@ -80,12 +80,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/thedushn/CLionProjects/shoping/DLinkedList.cpp">
-			<Option target="shoping"/>
-		</Unit>
-		<Unit filename="C:/Users/thedushn/CLionProjects/shoping/DLinkedList.h">
-			<Option target="shoping"/>
-		</Unit>
 		<Unit filename="C:/Users/thedushn/CLionProjects/shoping/Item.cpp">
 			<Option target="shoping"/>
 		</Unit>
