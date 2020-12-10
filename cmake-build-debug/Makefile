@@ -142,33 +142,6 @@ shoping/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\shoping.dir\build.make CMakeFiles/shoping.dir/build
 .PHONY : shoping/fast
 
-DLinkedList.obj: DLinkedList.cpp.obj
-
-.PHONY : DLinkedList.obj
-
-# target to build an object file
-DLinkedList.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\shoping.dir\build.make CMakeFiles/shoping.dir/DLinkedList.cpp.obj
-.PHONY : DLinkedList.cpp.obj
-
-DLinkedList.i: DLinkedList.cpp.i
-
-.PHONY : DLinkedList.i
-
-# target to preprocess a source file
-DLinkedList.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\shoping.dir\build.make CMakeFiles/shoping.dir/DLinkedList.cpp.i
-.PHONY : DLinkedList.cpp.i
-
-DLinkedList.s: DLinkedList.cpp.s
-
-.PHONY : DLinkedList.s
-
-# target to generate assembly for a file
-DLinkedList.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\shoping.dir\build.make CMakeFiles/shoping.dir/DLinkedList.cpp.s
-.PHONY : DLinkedList.cpp.s
-
 Item.obj: Item.cpp.obj
 
 .PHONY : Item.obj
@@ -259,9 +232,6 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... shoping
-	@echo ... DLinkedList.obj
-	@echo ... DLinkedList.i
-	@echo ... DLinkedList.s
 	@echo ... Item.obj
 	@echo ... Item.i
 	@echo ... Item.s

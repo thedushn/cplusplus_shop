@@ -46,7 +46,10 @@ void Item::setName(const string& string1) {
 
 bool Item::operator==(const Item &rhs) const {
 
-    return name == rhs.name;
+   if(strcmp(this->name,rhs.name)==0){
+       return true;
+   }
+    return false;
 }
 
 bool Item::operator!=(const Item &rhs) const {
@@ -54,12 +57,26 @@ bool Item::operator!=(const Item &rhs) const {
 }
 
 Item Item::operator+=(Item item_new) {
-    this->count+=item_new.count;
-    return (*this);
+    if(*this==item_new){
+        this->count+=item_new.count;
+        return (*this);
+    }else{
+        return (*this);
+    }
+
+
 }
 
 Item Item::operator + (Item item_new) {
     Item temp;
-    temp.count=this->count+item_new.count;
-    return (temp);
+
+    if(*this==item_new){
+        temp=*this;
+        temp.count= this->count+item_new.count;
+        return (temp);
+    }else{
+        return temp;
+    }
 }
+
+
