@@ -34,6 +34,8 @@ public:
 
     Item operator +(Item);
 
+    Item operator -=(Item);
+
 
 
 private:

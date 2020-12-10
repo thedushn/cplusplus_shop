@@ -3,6 +3,7 @@
 //
 
 #include <cstring>
+#include <fstream>
 #include "Shop.h"
 
 void Shop::Display_list() {
@@ -18,7 +19,7 @@ void Shop::Display_list() {
 
 }
 
-int Shop::Insert( unsigned int price, unsigned int count, const string& name){
+int Shop::Insert( unsigned int price, unsigned int count, const string& name_new){
 
     if(price<=0){
         cout <<"price cant be lower or equal to 0"<<endl;
@@ -28,15 +29,15 @@ int Shop::Insert( unsigned int price, unsigned int count, const string& name){
         cout <<"count cant be lower or equal to 0"<<endl;
         return -1;
     }
-    if(name.length()<=0 ||name.length()>=63){
-        cout <<"name must have at least one letter"<<endl;
-        cout <<"name must be less then 64 letters"<<endl;
+    if(name_new.length() <= 0 || name_new.length() >= 63){
+        cout <<"name_new must have at least one letter"<<endl;
+        cout <<"name_new must be less then 64 letters"<<endl;
         return -1;
     }
     Item item;
     if (this->head== nullptr)
     {
-        setItem(&item,price,count,name);
+        setItem(&item, price, count, name_new);
         this->head=this->tail=new ItemNode(nullptr,nullptr,item);
         this->length++;
 
@@ -45,7 +46,7 @@ int Shop::Insert( unsigned int price, unsigned int count, const string& name){
     else
     {
 
-        setItem(&item,price,count,name);
+        setItem(&item, price, count, name_new);
           if(search(&item)){
               return 0;
           }
@@ -62,11 +63,11 @@ int Shop::Insert( unsigned int price, unsigned int count, const string& name){
 
     return 0;
 }
-void Shop::setItem(Item *item, unsigned int price, unsigned int count, string name) {
+void Shop::setItem(Item *item, unsigned int price, unsigned int count, string name_new) {
 
     item->setCount(count);
     item->setPrice(price);
-    item->setName(name);
+    item->setName(name_new);
 }
 
 Shop::~Shop() {
@@ -100,7 +101,7 @@ Shop::ItemNode *Shop::getHead() const {
 
 ostream &operator<<(ostream & os, Shop::ItemNode itemNode) {
 
-cout << itemNode.getItem();
+os << itemNode.getItem();
 
     return os;
 }
@@ -125,11 +126,11 @@ bool Shop::search(Item *item) {
     return false;
 }
 
-void Shop::DeleteNode(const string &name) {
+void Shop::DeleteNode(const string &name_new) {
     ItemNode *temp=this->tail;
     while(temp){
 
-        if(strcmp(temp->getItem().getName(),name.c_str())==0){
+        if(strcmp(temp->getItem().getName(), name_new.c_str()) == 0){
 
             if(temp==this->tail && temp->getNext()== nullptr){ //last item
                     delete temp;
@@ -168,6 +169,57 @@ void Shop::DeleteNode(const string &name) {
 
 
     }
+}
+
+void Shop::CopyList(Shop::ItemNode *head, Shop::ItemNode *tail) {
+
+}
+
+void Shop::SaveList() {
+    ofstream ofstream1;
+    ofstream1.exceptions ( ofstream::failbit | ofstream::badbit );
+    if(!strlen(this->Shopname)){//shop has no name;
+        return;
+    }
+        try{
+            ofstream1.open(this->getName(),ios::out | ios::trunc);
+        }
+        catch (ofstream::failure &e) {
+
+            cerr << "Exception opening" <<endl;
+
+            return;
+        }
+
+
+    ItemNode *temp=this->tail;
+    string text;
+    while(temp){
+
+        ofstream1<<*temp;
+
+        temp= temp->getNext();
+
+
+    }
+
+    ofstream1.close();
+}
+
+Shop::Shop(const string& new_name) {
+
+    this->length= 0;
+    this->head  = nullptr;
+    this->tail  = nullptr;
+    if(new_name.length()<=63){
+      strcpy(Shopname, new_name.c_str());
+    }
+
+
+}
+
+const char *Shop::getName() const {
+    return Shopname;
 }
 
 

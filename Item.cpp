@@ -13,9 +13,9 @@ Item::Item() {
 }
 
 ostream &operator<<(ostream & os, Item item) {
-    cout << "Name of item "<<item.name<<endl;
-    cout << "Price of item "<<item.price<<endl;
-    cout << "Count of item "<<item.count<<endl;
+    os << "Name of item "<<item.name<<endl;
+    os << "Price of item "<<item.price<<endl;
+    os << "Count of item "<<item.count<<endl;
     return os;
 }
 
@@ -77,6 +77,18 @@ Item Item::operator + (Item item_new) {
     }else{
         return temp;
     }
+}
+
+Item Item::operator-=(Item item_new) {
+
+    if(item_new.count>this->count){
+        return *this;
+    }
+    else{
+        this->count-=item_new.count;
+        return *this;
+    }
+
 }
 
 
