@@ -41,26 +41,38 @@ private:
 
 
     };
-        ItemNode* head;
-        ItemNode* tail;
-    friend ostream & operator << (ostream&,Shop::ItemNode);
+        ItemNode        * head;
+        ItemNode        * tail;
+        unsigned int    length;
+        char Shopname[64];
 
-    bool search (Item *item);
+        friend ostream & operator << (ostream&,Shop::ItemNode);
+
+        bool search (Item *item);
 
 
 
-    unsigned int    length;
+
+
+
+
 public:
-    Shop();
+        Shop();
+        Shop(const string& name);
 
-    void Display_list();
+        void Display_list();
 
-    int  Insert( unsigned int price, unsigned int count, const string& name);
-    void  setItem(Item *item, unsigned int price, unsigned int count, string name);
-    void DeleteNode(const string& name);
+        int  Insert( unsigned int price, unsigned int count, const string& name_new);
+        void setItem(Item *item, unsigned int price, unsigned int count, string name_new);
+        void DeleteNode(const string& name_new);
+        void CopyList( ItemNode* head, ItemNode* tail);
+        void SaveList();
+
+    const char *getName() const;
+
     ItemNode *getHead() const;
 
-    virtual ~Shop();
+        virtual ~Shop();
 };
 
 

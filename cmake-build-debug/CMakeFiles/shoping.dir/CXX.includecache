@@ -10,15 +10,17 @@ C:/Users/thedushn/CLionProjects/shoping/Item.h
 ostream
 -
 
+C:/Users/thedushn/CLionProjects/shoping/Shop.cpp
+cstring
+-
+fstream
+-
+Shop.h
+C:/Users/thedushn/CLionProjects/shoping/Shop.h
+
 C:/Users/thedushn/CLionProjects/shoping/Shop.h
 iostream
 -
 Item.h
 C:/Users/thedushn/CLionProjects/shoping/Item.h
-
-C:/Users/thedushn/CLionProjects/shoping/main.cpp
-iostream
--
-Shop.h
-C:/Users/thedushn/CLionProjects/shoping/Shop.h
 
