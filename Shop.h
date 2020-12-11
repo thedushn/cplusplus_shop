@@ -40,6 +40,8 @@ private:
 
 
 
+
+
     };
         ItemNode        * head;
         ItemNode        * tail;
@@ -67,6 +69,7 @@ public:
         void DeleteNode(const string& name_new);
         void CopyList( ItemNode* head, ItemNode* tail);
         void SaveList();
+        void Downloadlist(const string& name_new);
 
     const char *getName() const;
 

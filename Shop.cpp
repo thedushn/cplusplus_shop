@@ -214,12 +214,65 @@ Shop::Shop(const string& new_name) {
     if(new_name.length()<=63){
       strcpy(Shopname, new_name.c_str());
     }
+    this->Downloadlist(new_name);
 
 
 }
 
 const char *Shop::getName() const {
     return Shopname;
+}
+
+void Shop::Downloadlist(const string& name_new) {
+    ifstream myfile(name_new);
+    string line;
+    if (myfile.is_open())
+    {
+        while ( getline (myfile,line) )
+        {
+            cout << line<<endl;
+            Item item_new;
+            char nametemp[64]={0};
+            string::size_type  found;
+            unsigned int price=0;
+            unsigned int count=0;
+           found= line.rfind(' ');
+           string tempstring;
+            tempstring=line.substr(found+1);
+           strcpy(nametemp,tempstring.c_str());
+
+                item_new.setName(nametemp);
+
+                if(!getline (myfile,line)){
+                    break;
+                }
+            tempstring=line.substr(found+1);
+            price= strtoul(tempstring.c_str(), nullptr,10);
+
+
+                item_new.setPrice(price);
+
+                if(!getline (myfile,line)){
+                    break;
+                }
+            tempstring=line.substr(found+1);
+            count= strtoul(tempstring.c_str(), nullptr,10);
+
+
+
+                item_new.setPrice(count);
+
+
+
+
+                cout << item_new;
+                this->Insert(price, count, nametemp);
+
+
+
+        }
+        myfile.close();
+    }
 }
 
 
@@ -272,6 +325,8 @@ void Shop::ItemNode::removeItem() {
     delete this;
 
 }
+
+
 
 
 
